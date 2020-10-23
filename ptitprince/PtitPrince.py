@@ -735,7 +735,7 @@ def RainCloud(x = None, y = None, hue = None, data = None,
     n_plots = 3
     split = False
     boxcolor = "black"
-    boxprops = {'facecolor':'none', "zorder":10}
+    boxprops = {'facecolor':'white', "zorder":10}
     if not hue is None:
         split = True
         boxcolor = palette
@@ -768,6 +768,9 @@ def RainCloud(x = None, y = None, hue = None, data = None,
     # Draw umberella/boxplot
     sns.boxplot   (x = x, y = y, hue = hue, data = data, orient = orient, width = width_box,
                          order = order, hue_order = hue_order,
+                         showfliers = True, fliersize = 2,
+                         capprops = {'linewidth':1},
+                         notch = True,
                          color = boxcolor, showcaps = True, boxprops = boxprops,
                          palette = palette, dodge = dodge, ax =ax, **kwbox)
 
